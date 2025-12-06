@@ -31,7 +31,7 @@ export default function Navbar({ onNav, currentSection = "home" }) {
         >
           <h1 className="text-lg sm:text-2xl md:text-3xl font-bold tracking-tight">
             <span className="text-white">Sazzad</span>
-            <span className="text-gray-500 ml-2">Hossen</span>
+            <span className="text-gray-500 ml-2">Hasan</span>
           </h1>
           <p className="text-[10px] sm:text-xs text-gray-500 tracking-widest mt-1 font-medium">
             FULL STACK DEVELOPER
@@ -39,13 +39,7 @@ export default function Navbar({ onNav, currentSection = "home" }) {
         </motion.div>
 
         {/* Desktop Menu */}
-        <div
-          className={
-            isAdmin && user
-              ? "hidden lg:flex items-center mr-78 gap-6 xl:gap-8 flex-wrap"
-              : "hidden lg:flex items-center gap-6 xl:gap-8 flex-wrap"
-          }
-        >
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8 flex-wrap">
           {items.map(([key, label]) => (
             <motion.button
               key={key}
@@ -78,7 +72,7 @@ export default function Navbar({ onNav, currentSection = "home" }) {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className={isAdmin && user ?"lg:hidden text-gray-300 mr-75 p-2": "lg:hidden text-gray-300 p-2"}
+          className="lg:hidden text-gray-300 p-2"
           aria-label={open ? "Close menu" : "Open menu"}
         >
           {open ? <FaTimes size={22} /> : <FaBars size={22} />}

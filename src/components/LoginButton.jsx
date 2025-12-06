@@ -21,7 +21,7 @@ export default function LoginButton() {
     <>
       {/* লগইন করা থাকলে উপরে দেখাবে */}
       {isAdmin && user && (
-        <div className="fixed top-3 right-6 z-50 flex items-center gap-4 bg-black/90 backdrop-blur-xl px-6 py-3 rounded-full border border-white/20 shadow-2xl">
+        <div className="fixed top-24 right-2 z-50 flex items-center gap-4 bg-black/90 backdrop-blur-xl px-6 py-3 rounded-full border border-white/20 shadow-2xl">
           <img
             src={user.photoURL}
             alt="admin"
