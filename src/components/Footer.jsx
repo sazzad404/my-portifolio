@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="absolute bottom-0 right-10 w-72 h-72 bg-blue-600/20 blur-3xl animate-pulse rounded-full"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto text-center md:text-left grid md:grid-cols-3 gap-12">
         {/* Left: About */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -64,7 +64,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-2xl font-bold mb-4">Contact</h3>
+          <h3 className="text-2xl  font-bold mb-4">Contact</h3>
           <div className="flex items-center gap-3 mb-2">
             <FaEnvelope className="text-purple-400" />
             <span className="text-gray-400 text-sm">sazzadhasan313@gmail.com</span>
@@ -74,7 +74,7 @@ export default function Footer() {
             <span className="text-gray-400 text-sm">+880 1780-XXXXXX</span>
           </div>
 
-          <div className="flex gap-4 mt-2">
+          <div className="flex  justify-center md:justify-start gap-4 mt-2">
             <a
               href="https://github.com/sazzadofficial150"
               target="_blank"

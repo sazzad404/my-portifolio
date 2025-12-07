@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useAdmin } from "../context/AdminContext";
 
 export default function Navbar({ onNav, currentSection = "home" }) {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState(currentSection); // local active state
   const { isAdmin, user, loading } = useAdmin();
+
   const items = [
     ["home", "Home"],
     ["about", "About"],
@@ -14,6 +16,16 @@ export default function Navbar({ onNav, currentSection = "home" }) {
     ["projects", "Projects"],
     ["contact", "Contact"],
   ];
+
+  // keep local active in sync if parent changes currentSection externally
+  useEffect(() => {
+    setActive(currentSection);
+  }, [currentSection]);
+
+  const handleClick = (key) => {
+    setActive(key);   // update local underline immediately
+    onNav?.(key);     // notify parent (if provided)
+  };
 
   return (
     <motion.nav
@@ -26,7 +38,7 @@ export default function Navbar({ onNav, currentSection = "home" }) {
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.02 }}
-          onClick={() => onNav("home")}
+          onClick={() => handleClick("home")}
           className="cursor-pointer select-none"
         >
           <h1 className="text-lg sm:text-2xl md:text-3xl font-bold tracking-tight">
@@ -45,15 +57,15 @@ export default function Navbar({ onNav, currentSection = "home" }) {
               key={key}
               whileHover={{ y: -3 }}
               whileTap={{ y: 0 }}
-              onClick={() => onNav(key)}
+              onClick={() => handleClick(key)}
               className={`relative text-base xl:text-lg font-medium transition-colors duration-300 px-2 py-1 ${
-                currentSection === key
-                  ? "text-white"
-                  : "text-gray-400 hover:text-white"
+                active === key ? "text-white" : "text-gray-400 hover:text-white"
               }`}
             >
               {label}
-              {currentSection === key ? (
+
+              {/* shared layoutId underline for smooth motion between items */}
+              {active === key ? (
                 <motion.div
                   layoutId="navbar-underline"
                   className="absolute -bottom-2 left-0 right-0 h-0.5 bg-white"
@@ -95,17 +107,15 @@ export default function Navbar({ onNav, currentSection = "home" }) {
                   key={key}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
-                    onNav(key);
+                    handleClick(key);
                     setOpen(false);
                   }}
                   className={`w-full text-left text-lg sm:text-xl font-medium py-3 transition-colors ${
-                    currentSection === key
-                      ? "text-white"
-                      : "text-gray-400 hover:text-white"
+                    active === key ? "text-white" : "text-gray-400 hover:text-white"
                   }`}
                 >
                   {label}
-                  {currentSection === key && (
+                  {active === key && (
                     <motion.div
                       layoutId="mobile-underline"
                       className="mt-1 h-0.5 bg-white w-16"

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaDownload, FaArrowRight } from "react-icons/fa";
-import profileImg from "../assets/img 2.png";
+import profileImg from "../assets/image.png";
 import { FaBriefcase, FaPaperPlane } from "react-icons/fa";
 
 export default function Hero() {
@@ -155,7 +155,7 @@ export default function Hero() {
                 <img
                   src={profileImg}
                   alt="Sazzad Hossen"
-                  className="w-80 h-80 md:w-96 md:ml-4 lg:ml-0 md:h-96 object-cover rounded-3xl shadow-2xl"
+                  className="w-80 h-80 md:w-96 md:ml-4 md:h-96 object-cover rounded-3xl shadow-2xl"
                 />
               </div>
             </div>
