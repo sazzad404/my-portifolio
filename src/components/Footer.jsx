@@ -7,6 +7,7 @@ import {
   FaTwitter,
   FaEnvelope,
   FaPhoneAlt,
+  FaFacebook,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -76,7 +77,7 @@ export default function Footer() {
 
           <div className="flex  justify-center md:justify-start gap-4 mt-2">
             <a
-              href="https://github.com/sazzadofficial150"
+              href="https://github.com/sazzad404"
               target="_blank"
               rel="noreferrer"
               className="p-3 bg-white/10 rounded-xl hover:bg-white/20 hover:scale-110 transition"
@@ -84,7 +85,7 @@ export default function Footer() {
               <FaGithub className="text-xl" />
             </a>
             <a
-              href="https://linkedin.com/in/sazzadofficial"
+              href="https://www.linkedin.com/in/md-sazzad-hasan/"
               target="_blank"
               rel="noreferrer"
               className="p-3 bg-white/10 rounded-xl hover:bg-white/20 hover:scale-110 transition"
@@ -92,12 +93,12 @@ export default function Footer() {
               <FaLinkedin className="text-xl" />
             </a>
             <a
-              href="https://twitter.com/sazzadofficial"
+              href="https://www.facebook.com/sazzadhossain444"
               target="_blank"
               rel="noreferrer"
               className="p-3 bg-white/10 rounded-xl hover:bg-white/20 hover:scale-110 transition"
             >
-              <FaTwitter className="text-xl" />
+              <FaFacebook className="text-xl" />
             </a>
           </div>
         </motion.div>

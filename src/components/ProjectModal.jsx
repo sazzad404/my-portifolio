@@ -13,8 +13,9 @@ const ProjectModal = ({ project, onClose }) => {
   if (!project) return null;
 
   // বাটনগুলির জন্য কমন স্টাইল
-  const baseButtonClasses = "flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 text-white font-semibold text-sm sm:text-base rounded-full shadow-xl transition duration-300 ease-in-out hover:scale-[1.02] active:scale-[0.98]";
-  
+  const baseButtonClasses =
+    "flex items-center justify-center gap-2 px-4 py-2 sm:px-6 sm:py-3 text-white font-semibold text-sm sm:text-base rounded-full shadow-xl transition duration-300 ease-in-out hover:scale-[1.02] active:scale-[0.98]";
+
   // Live Demo বাটনের জন্য বিশেষ স্টাইল
   const liveButtonClasses = `${baseButtonClasses} bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700`;
 
@@ -41,7 +42,6 @@ const ProjectModal = ({ project, onClose }) => {
         className="fixed inset-4 md:inset-8 lg:inset-12 z-[60] flex items-center justify-center"
       >
         <div className="relative w-full max-w-6xl max-h-full overflow-y-auto bg-gradient-to-br from-purple-900/40 via-blue-900/30 to-black/60 backdrop-blur-2xl border border-white/20 rounded-3xl shadow-5xl">
-          
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -52,7 +52,6 @@ const ProjectModal = ({ project, onClose }) => {
           </button>
 
           <div className="grid lg:grid-cols-2 gap-0">
-            
             {/* Image Side */}
             <div className="relative h-[25rem] sm:h-[32rem] lg:h-auto lg:min-h-[500px] overflow-hidden rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none">
               {project.image ? (
@@ -71,7 +70,6 @@ const ProjectModal = ({ project, onClose }) => {
 
               {/* Buttons row - এখন এটি ইমেজ/ভিডিও এর নিচে মাঝখানে আছে */}
               <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-wrap justify-center items-center gap-3 sm:gap-4 p-2">
-                
                 {/* Live Demo Button */}
                 {project.live && project.live !== "#" && (
                   <a
